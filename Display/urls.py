@@ -6,6 +6,5 @@ urlpatterns = [
     path('WEB_SERVER/', WEB_SERVER),
     path('On_Click/', On_Click),
     path('Off_Click/', Off_Click),
-    path('edit/', edit),
     path('update/<str:id>', updade),
 ]

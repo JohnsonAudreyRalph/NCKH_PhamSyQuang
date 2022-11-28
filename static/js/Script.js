@@ -55,28 +55,51 @@ function GetJSON(){
   fetch(URL_JSON)
     .then(response => response.json())
     .then(Device =>{
-      // console.log(Device);
-      Area_1__Device_1 = Device.ID_1.STATUS;
-      Area_1__Device_2 = Device.ID_2.STATUS;
-      Area_1__Device_3 = Device.ID_3.STATUS;
-      Area_1__Device_4 = Device.ID_4.STATUS;
-      Area_1__Device_5 = Device.ID_5.STATUS;
-      Area_1__Device_6 = Device.ID_6.STATUS;
-      Area_1__Device_7 = Device.ID_7.STATUS;
-      Area_2__Device_1 = Device.ID_8.STATUS;
-      Area_2__Device_2 = Device.ID_9.STATUS;
-      Area_2__Device_3 = Device.ID_10.STATUS;
-      Area_2__Device_4 = Device.ID_11.STATUS;
-      Area_2__Device_5 = Device.ID_12.STATUS;
-      Area_2__Device_6 = Device.ID_13.STATUS;
-      Area_2__Device_7 = Device.ID_14.STATUS;
-      Area_3__Device_1 = Device.ID_15.STATUS;
-      Area_3__Device_2 = Device.ID_16.STATUS;
-      Area_3__Device_3 = Device.ID_17.STATUS;
-      Area_3__Device_4 = Device.ID_18.STATUS;
-      Area_3__Device_5 = Device.ID_19.STATUS;
-      Area_3__Device_6 = Device.ID_20.STATUS;
-      Area_3__Device_7 = Device.ID_21.STATUS;
+      console.log(Device);
+      for(let i = 1; i < 22; i ++){
+        let x = 'Device.ID_'+i+'.STATUS'
+        console.log(x*1)
+      }
+      // Area_1__Device_1 = Device.ID_1.STATUS;
+      // console.log(typeof Area_1__Device_1)
+      // Area_1__Device_2 = Device.ID_2.STATUS;
+      // Area_1__Device_3 = Device.ID_3.STATUS;
+      // Area_1__Device_4 = Device.ID_4.STATUS;
+      // Area_1__Device_5 = Device.ID_5.STATUS;
+      // Area_1__Device_6 = Device.ID_6.STATUS;
+      // Area_1__Device_7 = Device.ID_7.STATUS;
+      // Area_2__Device_1 = Device.ID_8.STATUS;
+      // Area_2__Device_2 = Device.ID_9.STATUS;
+      // Area_2__Device_3 = Device.ID_10.STATUS;
+      // Area_2__Device_4 = Device.ID_11.STATUS;
+      // Area_2__Device_5 = Device.ID_12.STATUS;
+      // Area_2__Device_6 = Device.ID_13.STATUS;
+      // Area_2__Device_7 = Device.ID_14.STATUS;
+      // Area_3__Device_1 = Device.ID_15.STATUS;
+      // Area_3__Device_2 = Device.ID_16.STATUS;
+      // Area_3__Device_3 = Device.ID_17.STATUS;
+      // Area_3__Device_4 = Device.ID_18.STATUS;
+      // Area_3__Device_5 = Device.ID_19.STATUS;
+      // Area_3__Device_6 = Device.ID_20.STATUS;
+      // Area_3__Device_7 = Device.ID_21.STATUS;
+
+
+      // for(let Areas = 1; Areas <= 3; Areas++){
+      //   for(let Dev = 1; Dev <= 7; Dev ++){
+      //     let x = "Đây là: " + Areas + ' và: ' + Dev
+      //     alert(x)
+      //   }
+      // }
+      
+
+
+
+
+
+
+      // TYPE_1 = Device.ID_1.TYPE;
+      // console.log("Trạng thái thiết bị 1: " + Area_1__Device_1)
+      // console.log(TYPE_1)
       // console.log("Trạng thái thiết bị 1: " + Area_1__Device_1)
       // console.log("Trạng thái thiết bị 2: " + Area_1__Device_2)
       // console.log("Trạng thái thiết bị 3: " + Area_1__Device_3)
@@ -100,7 +123,7 @@ function GetJSON(){
       // console.log("Trạng thái thiết bị 21: " + Area_3__Device_7)
 
 
-
+      /*
       if(Area_1__Device_1 == 1){
         var element = document.getElementById("IMG__1");
         element.classList.add("on");
@@ -319,5 +342,6 @@ function GetJSON(){
         element.classList.add("off");
         element.classList.remove("on");
       }
+      */
     })
 }

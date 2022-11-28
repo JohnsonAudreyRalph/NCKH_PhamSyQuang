@@ -21,7 +21,7 @@
         {% csrf_token %}
     </form>
     <div class="container-fluid">
-        <h1 class="text-center alert alert-primary">NGHIÊN CỨU VÀ XÂY DỰNG MÔ HÌNH ĐIỀU KHIỂN HỆ ĐA VI ĐIỀU KHIÊN PHÂN TÁN THÔNG QUA INTERNET</h1>
+        <h1 class="text-center alert alert-primary">MÔ HÌNH ĐIỀU KHIỂN HỆ ĐA VI ĐIỀU KHIÊN PHÂN TÁN THÔNG QUA INTERNET</h1>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -43,8 +43,10 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <div class="input-group">
-                                                    <input type="text" value="{{CON_1.NAME}}" class="form-control" id="id_NAME">
-                                                    <a href="#Monitor_and_Control_Area__1-{{forloop.counter}}" class="btn btn-outline-primary BTN_EDIT" data-btnid = "{{CON_1.id}}" data-bs-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                    
+                                                    <input type="text" value="{{CON_1.NAME}}" class="form-control" id="id_NAME" readonly>
+                                                    <input type="text" value="{{CON_1.TYPE}}" class="form-control" id="id_TYPE" readonly>
+                                                    <a href="#Monitor_and_Control_Area__1-{{forloop.counter}}" class="btn btn-success btn-outline-primary BTN_EDIT" data-btnid = "{{CON_1.id}}" data-bs-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -88,6 +90,14 @@
                                                         <div class="form-group">
                                                             <label>Tên thiết bị</label>
                                                             <input name="NAME" value="{{CON_1.NAME}}" type="text" class="form-control" required>
+                                                            <label>Loại thiết bị</label>
+                                                            <select class="form-control" name="TYPE" value="{{CON_1.TYPE}}">
+                                                                <option value="Quạt">Quạt</option>
+                                                                <option value="Quạt trần">Quạt trần</option>
+                                                                <option value="Điều hòa">Điều hòa</option>
+                                                                <option value="Máy bơn nước">Máy bơn nước</option>
+                                                                <option value="Bóng đèn">Bóng đèn</option>
+                                                            </select>
                                                         </div>				
                                                     </div>
                                                     <div class="modal-footer">

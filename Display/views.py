@@ -38,19 +38,16 @@ def index(request):
     return render(request, 'BASE.html', {'CONSTROL_1':constrol_1, 'CONSTROL_2':constrol_2, 'CONSTROL_3':constrol_3})
     # return render(request, 'Compact.html', {'CONSTROL_1':constrol_1, 'CONSTROL_2':constrol_2, 'CONSTROL_3':constrol_3})
 
-def base(request):
-    return render(request, 'index.html')
-
 def On_Click(request):
     if request.method == "POST":
         id = request.POST.get('sid')
         print('Vị trí nút bấm: ' + id)
         pi = CONSTROL.objects.get(pk = id)
         if(pi.STATUS == 0):
-            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS + 1, NAME = pi.NAME)
+            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS + 1, NAME = pi.NAME, TYPE = pi.TYPE)
             print('Đã bật')
         else:
-            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS, NAME = pi.NAME)
+            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS, NAME = pi.NAME, TYPE = pi.TYPE)
             print('Không đổi')
         Mess_Show.save()
         TEMP = CONSTROL.objects.values()
@@ -67,10 +64,10 @@ def Off_Click(request):
         print('Vị trí nút bấm: ' + id)
         pi = CONSTROL.objects.get(pk = id)
         if(pi.STATUS == 1):
-            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS - 1, NAME = pi.NAME)
+            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS - 1, NAME = pi.NAME, TYPE = pi.TYPE)
             print('Đã tắt')
         else:
-            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS, NAME = pi.NAME)
+            Mess_Show = CONSTROL(id = pi.id, STATUS = pi.STATUS, NAME = pi.NAME, TYPE = pi.TYPE)
             print('Không đổi')
         Mess_Show.save()
         TEMP = CONSTROL.objects.values()
@@ -80,15 +77,14 @@ def Off_Click(request):
     else:
         return JsonResponse({'status':'Err'})
 
-def edit(request):
-    Get_Information = CONSTROL.objects.all()
-    return render(request, 'Compact.html', {'Get_Information':Get_Information})
 
 def updade(request, id):
     if request.method == "POST":
         NAME = request.POST.get('NAME')
-        new_NAME = CONSTROL(id = id, NAME = NAME)
+        TYPE = request.POST.get('TYPE')
+        new_NAME = CONSTROL(id = id, NAME = NAME, TYPE = TYPE)
         print("Tên nhận được là: " + NAME)
+        print("Loại nhận được là: " + TYPE)
         new_NAME.save()
         return redirect('/')
     return render(request, 'BASE.html')
