@@ -32,13 +32,31 @@ body{
     background-size: 100px 95px;
     width: 95px;
     height: 90px;
-    border: 1px solid red;
 }
 
-.on .IMG{
+.Light .on .IMG{
     background-image: url(../img/Light_Bulb_On.png);
 }
 
-.off .IMG{
+.Light .off .IMG{
     background-image: url(../img/Light_Bulb_Off.png);
+}
+
+.Ceiling_fans .on .IMG{
+    background-image: url(../img/Ceiling_fans_on.gif);
+}
+.Ceiling_fans .off .IMG{
+    background-image: url(../img/Ceiling_fans_off.gif);
+}
+.Electric_fan .on .IMG{
+    background-image: url(../img/electric_fan_on.gif);
+}
+.Electric_fan .off .IMG{
+    background-image: url(../img/electric_fan_off.png);
+}
+.Water_pumps .on .IMG{
+    background-image: url(../img/Water_pumps_on.gif);
+}
+.Water_pumps .off .IMG{
+    background-image: url(../img/Water_pumps_off.png);
 }
