@@ -1,4 +1,10 @@
 $(document).ready(function(){
+
+  function refresh() {    
+    setTimeout(function () {
+        location.reload()
+    }, 1000);
+  }
     $('.BUTTON_ON').click(function () {
       // console.log("On Click");
       // let NAME = $('#id_NAME').val();
@@ -49,7 +55,8 @@ $(document).ready(function(){
       });
     });
 });
-const IP = "http://127.0.0.1:8000/"
+// const IP = "http://127.0.0.1:8000/"
+const IP = "http://192.168.1.105:8000/"
 function GetJSON(){
   URL_JSON = IP + "WEB_SERVER/";
   fetch(URL_JSON)
